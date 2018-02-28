@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DigitalWorkplace.Service.Composition
+{
+    using System.ComponentModel.Composition.Hosting;
+
+    /// <summary>
+    /// Defines the required contract for implementing a composition container factory.
+    /// </summary>
+    public interface ICompositionContainerFactory
+    {
+        #region Methods
+        /// <summary>
+        /// Creates a container used for composition.
+        /// </summary>
+        /// <param name="providers">The set of export providers.</param>
+        /// <returns>An instance of <see cref="CompositionContainer"/>.</returns>
+        CompositionContainer CreateCompositionContainer(params ExportProvider[] providers);
+        #endregion
+    }
+}
